@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./Inter.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+
 body {
     color: plum;
+    font-family: Inter;
 }
