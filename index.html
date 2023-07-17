@@ -10,33 +10,53 @@
 </head>
 
 <body>
-    <h1>My Weather App</h1>
-    <input type="search" name="search" id="search" placeholder="Enter location">
-    <!-- toggle -->
-    <div class="today-weather">
-        <div class="main-info">
-            <h2>Stoccolma</h2>
-            <h3>Sunday 21st</h3>
-            <!-- icon -->
-            <p class="temperature">13º</p>
-            <h3>Partly cloudy</h3>
+    <div class="container">
+        <h1 class="logo">My Weather App</h1>
+        <input type="search" name="search" id="search" placeholder="Enter location">
+        <!-- toggle -->
+        <div class="box today-weather">
+            <div class="main-info">
+                <h1>Stoccolma</h1>
+                <h3>Sunday 21st</h3>
+                <div class="today-temp">
+                    <img src="../src/images/116.png">
+                    <p class="temperature">13º</p>
+                </div>
+                <h3>Partly cloudy</h3>
+            </div>
+            <div class="other-info">
+                <div class="other-info-box">
+                    <img src="../src/images/thermometer.png">
+                    <div>
+                        <h4>Feels like</h4>
+                        <p>13º</p>
+                    </div>
+                </div>
+                <div class="other-info-box">
+                    <img src="../src/images/humidity.png">
+                    <div>
+                        <h4>Umidity</h4>
+                        <p>30%</p>
+                    </div>
+                </div>
+                <div class="other-info-box">
+                    <img src="../src/images/rainy.png">
+                    <div>
+                        <h4>Chances of rain</h4>
+                        <p>20%</p>
+                    </div>
+                </div>
+                <div class="other-info-box">
+                    <img src="../src/images/wind.png">
+                    <div>
+                        <h4>Wind speed</h4>
+                        <p>20km/h</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="other-info">
-            <!-- icon -->
-            <h4>Feels like</h4>
-            <p>13º</p>
-            <!-- icon -->
-            <h4>Umidity</h4>
-            <p>30%</p>
-            <!-- icon -->
-            <h4>Chances of rain</h4>
-            <p>20%</p>
-            <!-- icon -->
-            <h4>Wind speed</h4>
-            <p>20km/h</p>
-        </div>
+        <div class="future-weather"></div>
     </div>
-    <div class="future-weather"></div>
 
 
 </body>
