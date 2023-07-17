@@ -5,9 +5,24 @@
     font-style: normal;
   }
 
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
 body {
     background: linear-gradient(135deg, #97ABFF 0%, #123597 100%);
     color: #fff;
     font-family: Inter;
     height: 100vh;
+    padding: 30px;
+}
+
+.today-weather {
+  background: linear-gradient(149deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  border-radius: 14px;
+  display: flex;
+  width: 900px;
+
 }
