@@ -6,6 +6,8 @@
   }
 
 body {
-    color: plum;
+    background: linear-gradient(135deg, #97ABFF 0%, #123597 100%);
+    color: #fff;
     font-family: Inter;
+    height: 100vh;
 }
