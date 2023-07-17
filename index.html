@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,37 @@
     <script src="main.js" defer></script>
     <title>Weather app</title>
 </head>
+
 <body>
-    <div id="content"></div>
-    
+    <h1>My Weather App</h1>
+    <input type="search" name="search" id="search" placeholder="Enter location">
+    <!-- toggle -->
+    <div class="today-weather">
+        <div class="main-info">
+            <h2>Stoccolma</h2>
+            <h3>Sunday 21st</h3>
+            <!-- icon -->
+            <p class="temperature">13º</p>
+            <h3>Partly cloudy</h3>
+        </div>
+        <div class="other-info">
+            <!-- icon -->
+            <h4>Feels like</h4>
+            <p>13º</p>
+            <!-- icon -->
+            <h4>Umidity</h4>
+            <p>30%</p>
+            <!-- icon -->
+            <h4>Chances of rain</h4>
+            <p>20%</p>
+            <!-- icon -->
+            <h4>Wind speed</h4>
+            <p>20km/h</p>
+        </div>
+    </div>
+    <div class="future-weather"></div>
+
+
 </body>
+
 </html>
