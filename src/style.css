@@ -15,17 +15,26 @@ body {
   background: linear-gradient(135deg, #97ABFF 0%, #123597 100%);
   color: #fff;
   font-family: Inter;
-  height: 100vh;
+  min-height: 100vh;
   padding: 30px;
 }
 
 .container {
   margin: auto;
-  width: 900px;
+  width: 1000px;
 }
 
 .logo {
   margin-bottom: 30px;
+}
+
+#search {
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  outline: none;
+  width: 280px;
 }
 
 .box {
@@ -38,6 +47,7 @@ body {
 
 .today-weather {
   height: 400px;
+  margin-bottom: 30px;
 }
 
 .main-info {
@@ -69,4 +79,18 @@ body {
 .other-info-box img {
   height: 40px;
   width: 40px;
+}
+
+.other-info-box p {
+  font-size: 24px;
+}
+
+.future-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future-weather-box {
+  width: 280px;
+  height: 170px;
 }
