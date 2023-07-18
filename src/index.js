@@ -1,5 +1,5 @@
-import { getWeather } from './app';
 import './style.css';
+import { getWeather } from './app';
 import { showWeather } from './ui';
 
 

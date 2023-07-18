@@ -1,3 +1,5 @@
+import { date } from "./utils";
+
 function showWeather(weather) {
 
     const todayTemp = document.querySelector(".today-temperature");
@@ -7,6 +9,7 @@ function showWeather(weather) {
     const humidity = document.querySelector(".humidity");
     const rain = document.querySelector(".rain");
     const wind = document.querySelector(".wind");
+    const todayDate = document.querySelector(".today-date");
 
     todayTemp.textContent = `${weather.current.temp_c} ºC`;
     location.textContent = weather.location.name;
@@ -15,6 +18,8 @@ function showWeather(weather) {
     humidity.textContent = `${weather.current.humidity}%;`;
     rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
     wind.textContent = `${weather.current.wind_kph} km/h`;
+
+    todayDate.textContent = date.today;
 
 }
 
