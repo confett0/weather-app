@@ -11,7 +11,7 @@ function showWeather(weather) {
     const wind = document.querySelector(".wind");
     const todayDate = document.querySelector(".today-date");
 
-    todayTemp.textContent = `${weather.current.temp_c} ºC`;
+    todayTemp.textContent = `${weather.current.temp_c}`;
     location.textContent = weather.location.name;
     todayCondition.textContent = weather.current.condition.text;
     perceivedTemperature.textContent = `${weather.current.feelslike_c} ºC`;

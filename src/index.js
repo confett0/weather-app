@@ -4,7 +4,7 @@ import { showWeather } from './ui';
 
 
 async function displayDefault() {
-    const weatherData = await getWeather('strasbourg');
+    const weatherData = await getWeather('voghera');
     showWeather(weatherData);
 }
 

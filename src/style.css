@@ -26,6 +26,7 @@ body {
 
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -37,7 +38,7 @@ header {
   border: none;
   border-radius: 8px;
   margin-bottom: 20px;
-  padding: 5px 15px;
+  padding: 10px 15px;
   outline: none;
   width: 280px;
 }
@@ -67,8 +68,8 @@ header {
 .today-temperature-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 20px 0 15px;
+  justify-content: space-evenly;
+  margin: 20px 0 12px;
 }
 
 .today-temperature {
