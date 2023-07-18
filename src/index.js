@@ -9,4 +9,3 @@ async function displayDefault() {
 }
 
 displayDefault();
-
