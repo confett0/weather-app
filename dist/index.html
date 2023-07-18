@@ -11,25 +11,27 @@
 
 <body>
     <div class="container">
-        <h1 class="logo">My Weather App</h1>
-        <input type="search" name="search" id="search" placeholder="Enter location and press enter">
-        <!-- toggle -->
-        <div class="box today-weather">
+        <header>
+            <h1 class="logo">My Weather App</h1>
+            <input type="search" name="search" id="search" placeholder="Enter location and press enter">
+            <!-- toggle -->
+        </header>
+        <section class="weather-box today">
             <div class="main-info">
-                <h1>Stoccolma</h1>
+                <h1 class="location">Stoccolma</h1>
                 <h3>Sunday 21st</h3>
-                <div class="today-temp">
+                <div class="today-temperature-wrap">
                     <img src="../src/images/116.png">
-                    <p class="temperature">13º</p>
+                    <p class="today-temperature">13º</p>
                 </div>
-                <h3>Partly cloudy</h3>
+                <h3 class="today-condition">Partly cloudy</h3>
             </div>
             <div class="other-info">
                 <div class="other-info-box">
                     <img src="../src/images/thermometer.png">
                     <div>
                         <h4>Feels like</h4>
-                        <p>13º</p>
+                        <p class="today-temp">13º</p>
                     </div>
                 </div>
                 <div class="other-info-box">
@@ -54,9 +56,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="future-weather">
-            <div class="box future-weather-box">
+        </section>
+        <section class="future-weather">
+            <div class="weather-box future-weather-box">
                 <div>
                     <h3>Monday 22</h3>
                     <p>8º</p>
@@ -64,7 +66,7 @@
                 </div>
                 <img src="../src/images/116.png">
             </div>
-            <div class="box future-weather-box">
+            <div class="weather-box future-weather-box">
                 <div>
                     <h3>Tuesday 23</h3>
                     <p>10º</p>
@@ -72,7 +74,7 @@
                 </div>
                 <img src="../src/images/116.png">
             </div>
-            <div class="box future-weather-box">
+            <div class="weather-box future-weather-box">
                 <div>
                     <h3>Wednesday 23</h3>
                     <p>9º</p>
@@ -80,7 +82,7 @@
                 </div>
                 <img src="../src/images/116.png">
             </div>
-        </div>
+        </section>
     </div>
 
 

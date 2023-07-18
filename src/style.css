@@ -37,7 +37,7 @@ body {
   width: 280px;
 }
 
-.box {
+.weather-box {
   background: linear-gradient(149deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.00) 100%);
   border-radius: 14px;
   display: flex;
@@ -45,7 +45,7 @@ body {
   align-items: center;
 }
 
-.today-weather {
+.today {
   height: 400px;
   margin-bottom: 30px;
 }
@@ -54,19 +54,19 @@ body {
   text-align: center;
 }
 
-.today-weather h1 {
+.today h1 {
   font-size: 44px;
   margin-bottom: 12px;
 }
 
-.today-temp {
+.today-temperature-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px 0 15px;
 }
 
-.temperature {
+.today-temperature {
   font-size: 90px;
 }
 
