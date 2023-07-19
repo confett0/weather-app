@@ -2,18 +2,22 @@ import { date } from "./utils";
 
 function showWeather(weather) {
 
-    const todayTemp = document.querySelector(".current-temperature");
+    const currentTemp = document.querySelector(".current-temperature");
     const location = document.querySelector(".location");
-    const todayCondition = document.querySelector(".current-condition");
+    const currentCondition = document.querySelector(".current-condition");
+    const todayMax = document.querySelector(".today-max");
+    const todayMin = document.querySelector(".today-min");
     const perceivedTemperature = document.querySelector(".feels-like");
     const humidity = document.querySelector(".humidity");
     const rain = document.querySelector(".rain");
     const wind = document.querySelector(".wind");
     const todayDate = document.querySelector(".today-date");
 
-    todayTemp.textContent = `${weather.current.temp_c}º`;
+    currentTemp.textContent = `${weather.current.temp_c}º`;
     location.textContent = weather.location.name;
-    todayCondition.textContent = weather.current.condition.text;
+    currentCondition.textContent = weather.current.condition.text;
+    todayMax.textContent = `${weather.forecast.forecastday[0].day.maxtemp_c}º`;
+    todayMin.textContent = `${weather.forecast.forecastday[0].day.mintemp_c}º`;
     perceivedTemperature.textContent = `${weather.current.feelslike_c}º`;
     humidity.textContent = `${weather.current.humidity}%;`;
     rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
