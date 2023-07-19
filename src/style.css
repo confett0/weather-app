@@ -21,7 +21,7 @@ body {
 
 .container {
   margin: auto;
-  width: 1000px;
+  width: 900px;
 }
 
 header {
@@ -113,6 +113,22 @@ header {
 }
 
 .future-weather-box {
-  width: 280px;
-  height: 170px;
+  display: flex;
+  align-items: center;
+  width: 425px;
+  height: 150px;
+  text-align: center;
+}
+
+.future-weather-box h3 {
+  margin-bottom: 15px;
+}
+
+.future-weather-box p {
+  margin-bottom: 10px;
+}
+
+.future-weather-icon {
+  width: 90px;
+  height: auto;
 }

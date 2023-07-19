@@ -13,7 +13,6 @@ function showWeather(weather) {
     const rain = document.querySelector(".rain");
     const wind = document.querySelector(".wind");
     const todayDate = document.querySelector(".today-date");
-
     const currentWeatherIcon = document.querySelector('.weather-icon');
 
     currentTemp.textContent = `${weather.current.temp_c}º`;
