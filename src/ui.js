@@ -1,16 +1,5 @@
 import { date } from "./utils";
-import Sunny from './images/icons/partly-cloudy.png';
-import PartlyCloudy from './images/icons/partly-cloudy.png';
-
-const getWeatherIcon = (code) => {
-    
-    if (code === 1000) {
-        return Sunny;
-    }
-    if (code === 1003) {
-        return PartlyCloudy;
-    }
-}
+import { getWeatherIcon } from "./utils";
 
 function showWeather(weather) {
 
@@ -39,7 +28,7 @@ function showWeather(weather) {
 
     todayDate.textContent = date.today;
 
-    currentWeatherIcon.src = getWeatherIcon(weather.current.condition.code);
+    currentWeatherIcon.src = getWeatherIcon(weather.current.condition.code, weather.current.is_day);
 
 }
 
