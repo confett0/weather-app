@@ -68,23 +68,34 @@ header {
 .current-temperature-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 20px 0 0;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0 5px;
 }
 
 .current-temperature {
-  font-size: 90px;
+  font-size: 72px;
+}
+
+.weather-icon {
+  width: 120px;
+  height: auto;
 }
 
 .current-condition {
   margin-bottom: 20px;
 }
 
+.other-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 .other-info-box {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 25px;
 }
 
 .other-info-box img {
