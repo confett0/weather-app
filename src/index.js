@@ -2,10 +2,12 @@ import './style.css';
 import { getWeather } from './app';
 import { showWeather } from './ui';
 
-
-async function displayDefault() {
-    const weatherData = await getWeather('london');
+async function displayWeather(city) {
+    const weatherData = await getWeather(city);
     showWeather(weatherData);
 }
 
-displayDefault();
+const input = document.querySelector('#search');
+input.addEventListener('change', () => displayWeather(input.value));
+
+displayWeather('london');
