@@ -65,19 +65,24 @@ header {
   margin-bottom: 12px;
 }
 
-.today-temperature-wrap {
+.current-temperature-wrap {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin: 20px 0 12px;
+  margin: 20px 0 0;
 }
 
-.today-temperature {
+.current-temperature {
   font-size: 90px;
+}
+
+.current-condition {
+  margin-bottom: 20px;
 }
 
 .other-info-box {
   display: flex;
+  align-items: center;
   gap: 15px;
   margin-bottom: 25px;
 }
