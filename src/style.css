@@ -1,7 +1,21 @@
 @font-face {
   font-family: 'Inter';
-  src: url('./Inter.ttf');
+  src: url('./fonts/Inter.ttf');
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Light';
+  src: url('./fonts/Inter-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter SemiBold';
+  src: url('./fonts/Inter-SemiBold.ttf');
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -14,7 +28,7 @@
 body {
   background: linear-gradient(135deg, #97ABFF 0%, #123597 100%);
   color: #fff;
-  font-family: Inter;
+  font-family: 'Inter Light';
   min-height: 100vh;
   padding: 30px;
 }

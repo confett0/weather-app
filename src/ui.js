@@ -3,6 +3,8 @@ import { getWeatherIcon } from "./utils";
 
 function showWeather(weather) {
 
+    // Display today weather
+
     const currentTemp = document.querySelector(".current-temperature");
     const location = document.querySelector(".location");
     const currentCondition = document.querySelector(".current-condition");
@@ -28,6 +30,17 @@ function showWeather(weather) {
     todayDate.textContent = date.today;
 
     currentWeatherIcon.src = getWeatherIcon(weather.current.condition.code, weather.current.is_day);
+
+    // Display future days weather
+
+    const futureWeatherCondition = document.querySelectorAll(".future-weather-condition");
+    const futureTemperature = document.querySelectorAll(".future-temperature");
+
+    for (let i = 0; i < futureWeatherCondition.length; i++) {
+        futureWeatherCondition[i].textContent = weather.forecast.forecastday[i + 1].day.condition.text;
+        futureTemperature[i].textContent = `weather.forecast.forecastday[i + 1].day.mintemp_c - weather.forecast.forecastday[i + 1].day.maxtemp_c`;
+    }
+
 
 }
 
