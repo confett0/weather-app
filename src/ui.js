@@ -1,4 +1,4 @@
-import { date } from "./utils";
+import { dates } from "./utils";
 import { getWeatherIcon } from "./utils";
 
 function showWeather(weather) {
@@ -27,7 +27,7 @@ function showWeather(weather) {
     rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
     wind.textContent = `${weather.current.wind_kph} km/h`;
 
-    todayDate.textContent = date.today;
+    todayDate.textContent = dates[0];
 
     currentWeatherIcon.src = getWeatherIcon(weather.current.condition.code, weather.current.is_day);
 
@@ -35,10 +35,17 @@ function showWeather(weather) {
 
     const futureWeatherCondition = document.querySelectorAll(".future-weather-condition");
     const futureTemperature = document.querySelectorAll(".future-temperature");
+    const futureWeatherIcon = document.querySelectorAll(".future-weather-icon");
+    const tomorrow = document.querySelector(".tomorrow");
+    const dayAfterAfternoon = document.querySelector(".day-after-tomorrow");
+
+    tomorrow.textContent = dates[1];
+    dayAfterAfternoon.textContent = dates[2];
 
     for (let i = 0; i < futureWeatherCondition.length; i++) {
         futureWeatherCondition[i].textContent = weather.forecast.forecastday[i + 1].day.condition.text;
-        futureTemperature[i].textContent = `weather.forecast.forecastday[i + 1].day.mintemp_c - weather.forecast.forecastday[i + 1].day.maxtemp_c`;
+        futureTemperature[i].textContent = `${weather.forecast.forecastday[i + 1].day.mintemp_c}º - ${weather.forecast.forecastday[i + 1].day.maxtemp_c}º`;
+        futureWeatherIcon[i].src = getWeatherIcon(weather.forecast.forecastday[i + 1].day.condition.code, 1);
     }
 
 

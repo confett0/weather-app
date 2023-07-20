@@ -13,7 +13,7 @@ import Thunderstorm from './images/icons/thunderstorm.png';
 import Clear from './images/icons/night-clear.png';
 import NightLightRain from './images/icons/night-light-rain.png';
 import NightFog from './images/icons/night-fog.png';
-import NightHeavySnow from './images/icons/night-heavy-snow.png';
+// import NightHeavySnow from './images/icons/night-heavy-snow.png';
 import NightPartlyCloudy from './images/icons/night-partly-cloudy.png';
 import NightRain from './images/icons/night-rain.png';
 import NightSnow from './images/icons/night-snow.png';
@@ -136,17 +136,14 @@ const getWeatherIcon = (code, isDay) => {
     }
 }
 
-const date = {
-    today: format(new Date(), "EEEE, LLLL do"),
-    day1: format(add(new Date(), {
+const dates = [
+    format(new Date(), "EEEE, LLLL do"),
+    format(add(new Date(), {
         days: 1,
     }), "EEEE, LLLL do"),
-    day2: format(add(new Date(), {
+    format(add(new Date(), {
         days: 2,
     }), "EEEE, LLLL do"),
-    day3: format(add(new Date(), {
-        days: 3,
-    }), "EEEE, LLLL do"),
-}
+]
 
-export { getWeatherIcon, date };
+export { getWeatherIcon, dates };
