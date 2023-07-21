@@ -3,7 +3,7 @@ import { getWeatherIcon } from "./utils";
 
 function showWeather(weather) {
 
-    // Display today weather
+    // Display today's weather
 
     const currentTemp = document.querySelector(".current-temperature");
     const location = document.querySelector(".location");
@@ -17,6 +17,7 @@ function showWeather(weather) {
     const todayDate = document.querySelector(".today-date");
     const currentWeatherIcon = document.querySelector('.weather-icon');
 
+    todayDate.textContent = dates[0];
     currentTemp.textContent = `${weather.current.temp_c}º`;
     location.textContent = weather.location.name;
     currentCondition.textContent = weather.current.condition.text;
@@ -26,28 +27,19 @@ function showWeather(weather) {
     humidity.textContent = `${weather.current.humidity}%`;
     rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
     wind.textContent = `${weather.current.wind_kph} km/h`;
-
-    todayDate.textContent = dates[0];
-
     currentWeatherIcon.src = getWeatherIcon(weather.current.condition.code, weather.current.is_day);
 
     // Display future days weather
 
-    const futureWeatherCondition = document.querySelectorAll(".future-weather-condition");
-    const futureTemperature = document.querySelectorAll(".future-temperature");
-    const futureWeatherIcon = document.querySelectorAll(".future-weather-icon");
-    const tomorrow = document.querySelector(".tomorrow");
-    const dayAfterAfternoon = document.querySelector(".day-after-tomorrow");
+    const futureWeatherConditions = document.querySelectorAll(".future-weather-condition");
+    const futureTemperatures = document.querySelectorAll(".future-temperature");
+    const futureWeatherIcons = document.querySelectorAll(".future-weather-icon");
+    const futureDates = document.querySelectorAll(".future-date");
 
-    tomorrow.textContent = dates[1];
-    dayAfterAfternoon.textContent = dates[2];
-
-    for (let i = 0; i < futureWeatherCondition.length; i++) {
-        futureWeatherCondition[i].textContent = weather.forecast.forecastday[i + 1].day.condition.text;
-        futureTemperature[i].textContent = `${weather.forecast.forecastday[i + 1].day.mintemp_c}º - ${weather.forecast.forecastday[i + 1].day.maxtemp_c}º`;
-        futureWeatherIcon[i].src = getWeatherIcon(weather.forecast.forecastday[i + 1].day.condition.code, 1);
-    }
-
+    futureDates.forEach((futureDate, i) => futureDate.textContent = dates[i + 1]);
+    futureWeatherConditions.forEach((futureWeatherCondition, i) => futureWeatherCondition.textContent = weather.forecast.forecastday[i + 1].day.condition.text);
+    futureTemperatures.forEach((futureTemperature, i) => futureTemperature.textContent = `${weather.forecast.forecastday[i + 1].day.mintemp_c}º - ${weather.forecast.forecastday[i + 1].day.maxtemp_c}º`);
+    futureWeatherIcons.forEach((futureWeatherIcon, i) => futureWeatherIcon.src = getWeatherIcon(weather.forecast.forecastday[i + 1].day.condition.code, 1));
 
 }
 
