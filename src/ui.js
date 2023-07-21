@@ -34,7 +34,7 @@ function showWeather(weather) {
   perceivedTemperature.textContent = `${weather.current.feelslike_c}º`;
   humidity.textContent = `${weather.current.humidity}%`;
   rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
-  wind.textContent = `${weather.current.wind_kph} km/h`;
+  wind.textContent = `${weather.current.wind_kph} km/h ${weather.current.wind_dir}`;
 
   // Displays future days weather
 
