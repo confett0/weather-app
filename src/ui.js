@@ -68,4 +68,32 @@ function showWeather(weather) {
   );
 }
 
-export { showWeather };
+function celsiusToFarenheit() {
+  const currentTemp = document.querySelector(".current-temperature");
+  const todayMax = document.querySelector(".today-max");
+  const todayMin = document.querySelector(".today-min");
+  const perceivedTemperature = document.querySelector(".feels-like");
+  const wind = document.querySelector(".wind");
+  const futureTemperatures = document.querySelectorAll(".future-temperature");
+
+  const convertFromCelsius = (temp) => (temp * 9/5) + 32;
+  
+  console.log(currentTemp.innerHTML);
+
+
+  currentTemp.textContent = convertFromCelsius(currentTemp.textContent);
+  // todayMax.textContent = `${weather.forecast.forecastday[0].day.maxtemp_f}º`;
+  // todayMin.textContent = `${weather.forecast.forecastday[0].day.mintemp_f}º`;
+
+  // perceivedTemperature.textContent = `${weather.current.feelslike_f}º`;
+  // wind.textContent = `${weather.current.wind_mph} mph`;
+
+  // futureTemperatures.forEach(
+  //   (futureTemperature, i) =>
+  //     (futureTemperature.textContent = `${
+  //       weather.forecast.forecastday[i + 1].day.mintemp_f
+  //     }º - ${weather.forecast.forecastday[i + 1].day.maxtemp_f}º`)
+  // );
+}
+
+export { showWeather, celsiusToFarenheit };
