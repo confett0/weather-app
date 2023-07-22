@@ -17,7 +17,7 @@
             <label class="toggle">
   <input type="checkbox" id="toggle">
   <span class="slider"></span>
-  <span class="labels" data-on="C" data-off="F"></span>
+  <span class="labels" data-celsius="C" data-fahrenheit="F"></span>
 </label>
         </header>
         <section class="weather-box today">
@@ -26,17 +26,17 @@
                 <h4 class="today-date"></h4>
                 <div class="current-temperature-wrap">
                     <img src="" class="weather-icon">
-                    <p class="current-temperature"></p>
+                    <p><span class="current-temperature"></span>º</p>
                 </div>
                 <h4 class="current-condition"></h4>
-                <h3>MAX: <span class="today-max"></span>  MIN: <span class="today-min"></span></h3>
+                <h3>MAX: <span class="today-max"></span>º  MIN: <span class="today-min"></span>º</h3>
             </div>
             <div class="other-info">
                 <div class="other-info-box">
                     <img src="../src/images/thermometer.png">
                     <div>
                         <h4>Feels like</h4>
-                        <p class="feels-like"></p>
+                        <p><span class="feels-like"></span>º</p>
                     </div>
                 </div>
                 <div class="other-info-box">
@@ -66,7 +66,7 @@
             <div class="weather-box future-weather-box">
                 <div>
                     <h4 class="future-date tomorrow"></h4>
-                    <p class="future-temperature"></p>
+                    <p class="future-temperature"><span class="future-temp-min"></span>º - <span class="future-temp-max"></span>º</p>
                     <h4 class="future-weather-condition"></h4>
                 </div>
                 <img src="" class="future-weather-icon">
@@ -74,7 +74,7 @@
             <div class="weather-box future-weather-box">
                 <div>
                     <h4 class="future-date day-after-tomorrow"></h4>
-                    <p class="future-temperature"></p>
+                    <p class="future-temperature"><span class="future-temp-min"></span>º - <span class="future-temp-max"></span>º</p>
                     <h4 class="future-weather-condition"></h4>
                 </div>
                 <img src="" class="future-weather-icon">
