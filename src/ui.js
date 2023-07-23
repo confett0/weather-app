@@ -27,56 +27,55 @@ function showWeather(weather) {
   // Displays temperature and wind according to user's unit of choice
 
   if (!celsiusToFarenheitToggle.checked) {
+    currentTemp.textContent = Math.floor(weather.current.temp_c);
+    todayMax.textContent = Math.floor(
+      weather.forecast.forecastday[0].day.maxtemp_c
+    );
+    todayMin.textContent = Math.floor(
+      weather.forecast.forecastday[0].day.mintemp_c
+    );
+    perceivedTemperature.textContent = Math.floor(weather.current.feelslike_c);
+    wind.textContent = `${weather.current.wind_kph} km/h ${weather.current.wind_dir}`;
 
-  currentTemp.textContent = Math.floor(weather.current.temp_c);
-  todayMax.textContent = Math.floor(
-    weather.forecast.forecastday[0].day.maxtemp_c
-  );
-  todayMin.textContent = Math.floor(
-    weather.forecast.forecastday[0].day.mintemp_c
-  );
-  perceivedTemperature.textContent = Math.floor(weather.current.feelslike_c);
-  wind.textContent = `${weather.current.wind_kph} km/h ${weather.current.wind_dir}`;
+    futureTemperaturesMin.forEach(
+      (futureTemperatureMin, i) =>
+        (futureTemperatureMin.textContent = Math.floor(
+          weather.forecast.forecastday[i + 1].day.mintemp_c
+        ))
+    );
+    futureTemperaturesMax.forEach(
+      (futureTemperatureMax, i) =>
+        (futureTemperatureMax.textContent = Math.floor(
+          weather.forecast.forecastday[i + 1].day.maxtemp_c
+        ))
+    );
+  }
+  if (celsiusToFarenheitToggle.checked) {
+    currentTemp.textContent = Math.floor(weather.current.temp_f);
+    todayMax.textContent = Math.floor(
+      weather.forecast.forecastday[0].day.maxtemp_f
+    );
+    todayMin.textContent = Math.floor(
+      weather.forecast.forecastday[0].day.mintemp_f
+    );
+    perceivedTemperature.textContent = Math.floor(weather.current.feelslike_f);
+    wind.textContent = `${weather.current.wind_mph} mph ${weather.current.wind_dir}`;
 
-  futureTemperaturesMin.forEach(
-    (futureTemperatureMin, i) =>
-      (futureTemperatureMin.textContent = Math.floor(
-        weather.forecast.forecastday[i + 1].day.mintemp_c
-      ))
-  );
-  futureTemperaturesMax.forEach(
-    (futureTemperatureMax, i) =>
-      (futureTemperatureMax.textContent = Math.floor(
-        weather.forecast.forecastday[i + 1].day.maxtemp_c
-      ))
-  );
-}
-if (celsiusToFarenheitToggle.checked) {
-  currentTemp.textContent = Math.floor(weather.current.temp_f);
-  todayMax.textContent = Math.floor(
-    weather.forecast.forecastday[0].day.maxtemp_f
-  );
-  todayMin.textContent = Math.floor(
-    weather.forecast.forecastday[0].day.mintemp_f
-  );
-  perceivedTemperature.textContent = Math.floor(weather.current.feelslike_f);
-  wind.textContent = `${weather.current.wind_mph} mph ${weather.current.wind_dir}`;
+    futureTemperaturesMin.forEach(
+      (futureTemperatureMin, i) =>
+        (futureTemperatureMin.textContent = Math.floor(
+          weather.forecast.forecastday[i + 1].day.mintemp_f
+        ))
+    );
+    futureTemperaturesMax.forEach(
+      (futureTemperatureMax, i) =>
+        (futureTemperatureMax.textContent = Math.floor(
+          weather.forecast.forecastday[i + 1].day.maxtemp_f
+        ))
+    );
+  }
 
-  futureTemperaturesMin.forEach(
-    (futureTemperatureMin, i) =>
-      (futureTemperatureMin.textContent = Math.floor(
-        weather.forecast.forecastday[i + 1].day.mintemp_f
-      ))
-  );
-  futureTemperaturesMax.forEach(
-    (futureTemperatureMax, i) =>
-      (futureTemperatureMax.textContent = Math.floor(
-        weather.forecast.forecastday[i + 1].day.maxtemp_f
-      ))
-  );
-}
-
- // Displays today's other info
+  // Displays today's other info
 
   location.textContent = weather.location.name;
   todayDate.textContent = dates[0];
@@ -85,7 +84,7 @@ if (celsiusToFarenheitToggle.checked) {
     weather.current.is_day
   );
   currentCondition.textContent = weather.current.condition.text;
-  
+
   humidity.textContent = `${weather.current.humidity}%`;
   rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
 
@@ -120,6 +119,8 @@ function celsiusToFahrenheit() {
 
   const convertFromCelsius = (temp) => Math.floor((temp * 9) / 5 + 32);
   const convertFromFahrenheit = (temp) => Math.floor(((temp - 32) * 5) / 9);
+  const convertFromKm = (speed) => Math.floor(speed * 0.62137);
+  const convertFromMiles = (speed) => Math.floor(speed / 0.62137);
 
   if (celsiusToFarenheitToggle.checked) {
     currentTemp.textContent = convertFromCelsius(currentTemp.textContent);
@@ -142,8 +143,8 @@ function celsiusToFahrenheit() {
         ))
     );
 
-    // wind.textContent = `${weather.current.wind_mph} mph`;
-  }
+  //   wind.textContent = ;
+   }
 
   if (!celsiusToFarenheitToggle.checked) {
     currentTemp.textContent = convertFromFahrenheit(currentTemp.textContent);
