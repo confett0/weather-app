@@ -8,7 +8,7 @@ async function displayWeather(city) {
 }
 
 const cityInput = document.querySelector("#search");
-cityInput.addEventListener("change", () => displayWeather(input.value));
+cityInput.addEventListener("change", () => displayWeather(cityInput.value));
 
 const celsiusToFarenheitToggle = document.querySelector("#toggle");
 celsiusToFarenheitToggle.addEventListener("change", celsiusToFahrenheit);
