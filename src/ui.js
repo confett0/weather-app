@@ -24,6 +24,12 @@ function showWeather(weather) {
   const futureDates = document.querySelectorAll(".future-date");
   const celsiusToFarenheitToggle = document.querySelector("#toggle");
 
+  // Displays darker background if it's nighttime
+
+  if (weather.current.is_day === 0) {
+    document.body.style.background = "linear-gradient(135deg, #7F91DE 0%, #081334 100%)";
+  }
+
   // Displays temperature and wind according to user's unit of choice
 
   if (!celsiusToFarenheitToggle.checked) {
@@ -73,6 +79,7 @@ function showWeather(weather) {
           weather.forecast.forecastday[i + 1].day.maxtemp_f
         ))
     );
+
   }
 
   // Displays today's other info
