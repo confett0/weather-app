@@ -74,6 +74,8 @@ function showWeather(weather) {
 }
 
 function celsiusToFahrenheit() {
+
+  const celsiusToFarenheitToggle = document.querySelector("#toggle");
   const currentTemp = document.querySelector(".current-temperature");
   const todayMax = document.querySelector(".today-max");
   const todayMin = document.querySelector(".today-min");
@@ -84,6 +86,8 @@ function celsiusToFahrenheit() {
 
   const convertFromCelsius = (temp) => (temp * 9/5 + 32).toFixed(1);
   const convertFromFahrenheit = (temp) => ((temp - 32) * 5/9).toFixed(1);
+
+  if (celsiusToFarenheitToggle.checked) {
 
   currentTemp.textContent = convertFromCelsius(currentTemp.textContent);
   todayMax.textContent = convertFromCelsius(todayMax.textContent);
@@ -101,6 +105,23 @@ function celsiusToFahrenheit() {
 
   // wind.textContent = `${weather.current.wind_mph} mph`;
 
+}
+
+if (!celsiusToFarenheitToggle.checked) {
+  currentTemp.textContent = convertFromFahrenheit(currentTemp.textContent);
+  todayMax.textContent = convertFromFahrenheit(todayMax.textContent);
+  todayMin.textContent = convertFromFahrenheit(todayMin.textContent);
+  perceivedTemperature.textContent = convertFromFahrenheit(perceivedTemperature.textContent);
+
+futureTemperaturesMin.forEach(
+  (futureTemperatureMin) =>
+    (futureTemperatureMin.textContent = convertFromFahrenheit(futureTemperatureMin.textContent)
+));
+futureTemperaturesMax.forEach(
+  (futureTemperatureMax) =>
+    (futureTemperatureMax.textContent = convertFromFahrenheit(futureTemperatureMax.textContent))
+);
+}
 }
 
 export { showWeather, celsiusToFahrenheit };
