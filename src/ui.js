@@ -20,18 +20,18 @@ function showWeather(weather) {
 
   location.textContent = weather.location.name;
   todayDate.textContent = dates[0];
-  currentTemp.textContent = `${weather.current.temp_c}`;
+  currentTemp.textContent = Math.floor(weather.current.temp_c);
   currentWeatherIcon.src = getWeatherIcon(
     weather.current.condition.code,
     weather.current.is_day
   );
   currentCondition.textContent = weather.current.condition.text;
-  todayMax.textContent = weather.forecast.forecastday[0].day.maxtemp_c;
-  todayMin.textContent = weather.forecast.forecastday[0].day.mintemp_c;
+  todayMax.textContent = Math.floor(weather.forecast.forecastday[0].day.maxtemp_c);
+  todayMin.textContent = Math.floor(weather.forecast.forecastday[0].day.mintemp_c);
 
   // Extra info
 
-  perceivedTemperature.textContent = weather.current.feelslike_c;
+  perceivedTemperature.textContent = Math.floor(weather.current.feelslike_c);
   humidity.textContent = `${weather.current.humidity}%`;
   rain.textContent = `${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
   wind.textContent = `${weather.current.wind_kph} km/h ${weather.current.wind_dir}`;
@@ -57,12 +57,12 @@ function showWeather(weather) {
   futureTemperaturesMin.forEach(
     (futureTemperatureMin, i) =>
       (futureTemperatureMin.textContent = 
-        weather.forecast.forecastday[i + 1].day.mintemp_c)
+        Math.floor(weather.forecast.forecastday[i + 1].day.mintemp_c))
   );
   futureTemperaturesMax.forEach(
     (futureTemperatureMax, i) =>
       (futureTemperatureMax.textContent = 
-        weather.forecast.forecastday[i + 1].day.maxtemp_c)
+        Math.floor(weather.forecast.forecastday[i + 1].day.maxtemp_c))
   );
   futureWeatherIcons.forEach(
     (futureWeatherIcon, i) =>
