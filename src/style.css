@@ -14,14 +14,16 @@
 body {
   background: linear-gradient(135deg, #97ABFF 0%, #123597 100%);
   color: #fff;
+  display: flex;
+  flex-direction: column;
   font-family: 'Inter Light';
-  min-height: 100vh;
-  padding: 30px;
 }
 
 .container {
   margin: auto;
-  width: 900px;
+  padding: 30px 0;
+  min-height: calc(100vh - 27px);
+  width: min(90%,900px);
 }
 
 header {
@@ -189,7 +191,7 @@ header {
 .future-weather-box {
   display: flex;
   align-items: center;
-  width: 425px;
+  width: min(48%, 425px);
   height: 150px;
   text-align: center;
 }
@@ -202,4 +204,21 @@ header {
 .future-weather-icon {
   width: 90px;
   height: auto;
+}
+
+footer {
+  font-size: 12px;
+  padding: 6px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .future-weather {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .future-weather-box {
+    width: 100%;
+  }
 }
