@@ -21,7 +21,7 @@ body {
 
 .container {
   margin: auto;
-  padding: 30px 0;
+  padding: 25px 0 35px;
   min-height: calc(100vh - 27px);
   width: min(90%,900px);
 }
@@ -127,8 +127,8 @@ header {
 }
 
 .today {
-  height: 400px;
   margin-bottom: 30px;
+  padding: 30px 20px;
 }
 
 .main-info {
@@ -213,12 +213,38 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
-  .future-weather {
+
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #search {
+    margin-left: 0;
+  }
+
+  .today {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .other-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .other-info-box {
+    width: 45%;
+  }
+
+  .future-weather {
+    flex-direction: column;
+    gap: 30px;
   }
 
   .future-weather-box {
     width: 100%;
   }
+
 }
