@@ -85,7 +85,7 @@ header {
 }
 
 .toggle input:checked + .slider {
-  background-color: #3a3a3a;
+  background-color: #939191;
 }
 .toggle input:checked + .slider::before {
   transform: translateX(calc(var(--width) - var(--height)));
@@ -209,6 +209,10 @@ footer {
   font-size: 11px;
   padding: 6px 0;
   text-align: center;
+}
+
+footer a, footer a:visited {
+  color: #fff;
 }
 
 @media screen and (max-width: 700px) {

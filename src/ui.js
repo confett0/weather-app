@@ -1,5 +1,4 @@
-import { dates } from "./utils";
-import { getWeatherIcon } from "./utils";
+import { dates, getWeatherIcon } from "./utils";
 
 const currentTemp = document.querySelector(".current-temperature");
 const todayMax = document.querySelector(".today-max");
