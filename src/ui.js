@@ -1,85 +1,87 @@
 import { dates } from "./utils";
 import { getWeatherIcon } from "./utils";
 
-function showWeather(weather) {
-  // Displays today's weather
+const currentTemp = document.querySelector(".current-temperature");
+const todayMax = document.querySelector(".today-max");
+const todayMin = document.querySelector(".today-min");
+const perceivedTemperature = document.querySelector(".feels-like");
+const wind = document.querySelector(".wind");
+const windUnit = document.querySelector(".wind-speed-unit");
+const futureTemperaturesMin = document.querySelectorAll(".future-temp-min");
+const futureTemperaturesMax = document.querySelectorAll(".future-temp-max");
+const celsiusToFarenheitToggle = document.querySelector("#toggle");
 
-  const currentTemp = document.querySelector(".current-temperature");
+function showWeather(weather) {
   const location = document.querySelector(".location");
   const currentCondition = document.querySelector(".current-condition");
-  const todayMax = document.querySelector(".today-max");
-  const todayMin = document.querySelector(".today-min");
-  const perceivedTemperature = document.querySelector(".feels-like");
   const humidity = document.querySelector(".humidity");
   const rain = document.querySelector(".rain");
-  const wind = document.querySelector(".wind");
   const todayDate = document.querySelector(".today-date");
   const currentWeatherIcon = document.querySelector(".weather-icon");
   const futureWeatherConditions = document.querySelectorAll(
     ".future-weather-condition"
   );
-  const futureTemperaturesMin = document.querySelectorAll(".future-temp-min");
-  const futureTemperaturesMax = document.querySelectorAll(".future-temp-max");
   const futureWeatherIcons = document.querySelectorAll(".future-weather-icon");
   const futureDates = document.querySelectorAll(".future-date");
-  const celsiusToFarenheitToggle = document.querySelector("#toggle");
 
   // Displays darker background if it's nighttime
 
   if (weather.current.is_day === 0) {
-    document.body.style.background = "linear-gradient(135deg, #7F91DE 0%, #081334 100%)";
+    document.body.style.background =
+      "linear-gradient(135deg, #7F91DE 0%, #081334 100%)";
   }
 
   // Displays temperature and wind according to user's unit of choice
 
   if (!celsiusToFarenheitToggle.checked) {
-    currentTemp.textContent = Math.floor(weather.current.temp_c);
-    todayMax.textContent = Math.floor(
+    currentTemp.textContent = Math.round(weather.current.temp_c);
+    todayMax.textContent = Math.round(
       weather.forecast.forecastday[0].day.maxtemp_c
     );
-    todayMin.textContent = Math.floor(
+    todayMin.textContent = Math.round(
       weather.forecast.forecastday[0].day.mintemp_c
     );
-    perceivedTemperature.textContent = Math.floor(weather.current.feelslike_c);
-    wind.textContent = `${weather.current.wind_kph} km/h ${weather.current.wind_dir}`;
+    perceivedTemperature.textContent = Math.round(weather.current.feelslike_c);
+    wind.textContent = weather.current.wind_kph;
+    windUnit.textContent = "km/h";
 
     futureTemperaturesMin.forEach(
       (futureTemperatureMin, i) =>
-        (futureTemperatureMin.textContent = Math.floor(
+        (futureTemperatureMin.textContent = Math.round(
           weather.forecast.forecastday[i + 1].day.mintemp_c
         ))
     );
     futureTemperaturesMax.forEach(
       (futureTemperatureMax, i) =>
-        (futureTemperatureMax.textContent = Math.floor(
+        (futureTemperatureMax.textContent = Math.round(
           weather.forecast.forecastday[i + 1].day.maxtemp_c
         ))
     );
   }
   if (celsiusToFarenheitToggle.checked) {
-    currentTemp.textContent = Math.floor(weather.current.temp_f);
-    todayMax.textContent = Math.floor(
+    currentTemp.textContent = Math.round(weather.current.temp_f);
+    todayMax.textContent = Math.round(
       weather.forecast.forecastday[0].day.maxtemp_f
     );
-    todayMin.textContent = Math.floor(
+    todayMin.textContent = Math.round(
       weather.forecast.forecastday[0].day.mintemp_f
     );
-    perceivedTemperature.textContent = Math.floor(weather.current.feelslike_f);
-    wind.textContent = `${weather.current.wind_mph} mph ${weather.current.wind_dir}`;
+    perceivedTemperature.textContent = Math.round(weather.current.feelslike_f);
+    wind.textContent = weather.current.wind_mph;
+    windUnit.textContent = "mph";
 
     futureTemperaturesMin.forEach(
       (futureTemperatureMin, i) =>
-        (futureTemperatureMin.textContent = Math.floor(
+        (futureTemperatureMin.textContent = Math.round(
           weather.forecast.forecastday[i + 1].day.mintemp_f
         ))
     );
     futureTemperaturesMax.forEach(
       (futureTemperatureMax, i) =>
-        (futureTemperatureMax.textContent = Math.floor(
+        (futureTemperatureMax.textContent = Math.round(
           weather.forecast.forecastday[i + 1].day.maxtemp_f
         ))
     );
-
   }
 
   // Displays today's other info
@@ -115,19 +117,11 @@ function showWeather(weather) {
 }
 
 function celsiusToFahrenheit() {
-  const celsiusToFarenheitToggle = document.querySelector("#toggle");
-  const currentTemp = document.querySelector(".current-temperature");
-  const todayMax = document.querySelector(".today-max");
-  const todayMin = document.querySelector(".today-min");
-  const perceivedTemperature = document.querySelector(".feels-like");
-  const wind = document.querySelector(".wind");
-  const futureTemperaturesMin = document.querySelectorAll(".future-temp-min");
-  const futureTemperaturesMax = document.querySelectorAll(".future-temp-max");
 
-  const convertFromCelsius = (temp) => Math.floor((temp * 9) / 5 + 32);
-  const convertFromFahrenheit = (temp) => Math.floor(((temp - 32) * 5) / 9);
-  const convertFromKm = (speed) => Math.floor(speed * 0.62137);
-  const convertFromMiles = (speed) => Math.floor(speed / 0.62137);
+  const convertFromCelsius = (temp) => Math.round((temp * 9) / 5 + 32);
+  const convertFromFahrenheit = (temp) => Math.round(((temp - 32) * 5) / 9);
+  const convertFromKm = (speed) => Math.round(speed * 0.62137);
+  const convertFromMiles = (speed) => Math.round(speed / 0.62137);
 
   if (celsiusToFarenheitToggle.checked) {
     currentTemp.textContent = convertFromCelsius(currentTemp.textContent);
@@ -150,8 +144,9 @@ function celsiusToFahrenheit() {
         ))
     );
 
-  //   wind.textContent = ;
-   }
+    wind.textContent = convertFromKm(wind.textContent);
+    windUnit.textContent = "mph";
+  }
 
   if (!celsiusToFarenheitToggle.checked) {
     currentTemp.textContent = convertFromFahrenheit(currentTemp.textContent);
@@ -173,6 +168,9 @@ function celsiusToFahrenheit() {
           futureTemperatureMax.textContent
         ))
     );
+
+    wind.textContent = convertFromMiles(wind.textContent);
+    windUnit.textContent = "km/h";
   }
 }
 
